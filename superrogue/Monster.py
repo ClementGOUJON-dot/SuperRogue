@@ -6,7 +6,7 @@ def norme(positon1,position2):
 
 class Monster:
    """ Class to define a monster"""
-    def __init__(self, position, degats, vies) -> None:
+    def __init__(self, position, degats, vies,name) -> None:
             """Object initialization."""
             # Vérification que 'position' est un tableau numpy avec 2 dimensions
             if not isinstance(position, np.ndarray):
@@ -16,11 +16,12 @@ class Monster:
             self._position = position
             self._degats = degats
             self._vies = vies
+            self._name = name
 
     def monster_move(self._position,hero,mur):
 
         if norme(self._position,hero._position) <= 1:
-            hero._vies
+            hero._vies = 
         else :
             move = np.array([0,1],[0,-1],[1,0],[-1,0])
             distance =[]
