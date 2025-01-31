@@ -39,20 +39,18 @@ class Game :
         self._init()
 
         # Start pygame loop
-    
+        self._state = State.PLAY
         while self._state != State.QUIT:
 
             # Wait 1/FPS second
             self._clock.tick(self._fps)
-
-            # Listen for events
-            self._process_events()
 
             # Clear the screen before drawing the next frame
             self._screen.fill(pygame.Color("black"))
 
             # Draw
             self._board.draw()
+            
             match self._state:
                 case State.GAMEOVER:
                     self._drawgameover()
