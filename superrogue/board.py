@@ -1,10 +1,10 @@
 import pygame
 import random as rd
 
-from .gold import Gold
-from .subject import Subject
-from .observer import Observer
-from .gameobject import GameObject
+from superrogue.gold import Gold
+from superrogue.subject import Subject
+from superrogue.observer import Observer
+from superrogue.gameobject import GameObject
 
 class Board (Subject, Observer) : # subject car le Board reçoit aussi des infos des objets. 
     def __init__(self, screen, tile_size, nb_rows, nb_cols) -> None:

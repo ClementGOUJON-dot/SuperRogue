@@ -1,5 +1,5 @@
-from .lignecommande import lignecommande
-from .game import Game 
+from superrogue.lignecommande import lignecommande
+from superrogue.game import Game 
 
 def main() -> None :
                 
@@ -15,4 +15,4 @@ def main() -> None :
         # Start the game
         game.start()
         
-
+main()

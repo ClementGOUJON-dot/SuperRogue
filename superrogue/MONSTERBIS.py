@@ -1,6 +1,6 @@
 import pygame
 import numpy as np
-from .gameobject import GameObject
+from superrogue.gameobject import GameObject
 
 def norme(positon1,position2):
     return (positon1[0]-position2[0])**2 + (positon1[1]-position2[1])**2

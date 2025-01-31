@@ -1,7 +1,7 @@
 import pygame
 
-from .gameobject import GameObject
-from .tile import Tile
+from superrogue.gameobject import GameObject
+from superrogue.tile import Tile
 
 
 class Gold(GameObject):

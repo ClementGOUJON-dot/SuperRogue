@@ -1,7 +1,7 @@
 import pygame
-from .walls import Walls
-from .state import State
-from .board import Board
+from superrogue.walls import Walls
+from superrogue.state import State
+from superrogue.board import Board
 
 class Game :
 
@@ -15,7 +15,7 @@ class Game :
         self._heroe_color= heroe_color
         self._heroe= None
 
-    def _Initialize(self) -> None:
+    def _initialize(self) -> None:
         """Initialize the game."""
 
         # Create a display screen
@@ -53,7 +53,7 @@ class Game :
         pygame.init()
 
         # Initialize game
-        self._Initialize()
+        self._initialize()
 
         # Start pygame loop
         self._state = State.PLAY
@@ -61,7 +61,7 @@ class Game :
 
             # Wait 1/FPS second
             self._clock.tick(self._fps)
-
+            
             # Listen for events
             self._process_events()
 
@@ -70,9 +70,8 @@ class Game :
 
             # Draw
             self._board.draw()
-            pygame.draw.rect(self._screen, pygame.Color("white"), (50, 50, 100, 100))
-            pygame.display.flip()
-
+        
+        
             match self._state:
                 case State.GAMEOVER:
                     self._drawgameover()

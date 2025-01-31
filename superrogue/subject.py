@@ -1,5 +1,5 @@
 import abc
-from .observer import Observer
+from superrogue.observer import Observer
 
 class Subject(abc.ABC):
 

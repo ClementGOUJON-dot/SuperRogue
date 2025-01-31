@@ -1,11 +1,11 @@
-import pygame
-import typing
-from .tile import Tile
-from .lignecommande import lignecommande
 
+import typing
+from superrogue.tile import Tile
+from superrogue.lignecommande import lignecommande
+from superrogue.gameobject import GameObject
  
 
-class Walls :
+class Walls(GameObject) :
 
     def __init__(self, nb_lines: int, nb_cols: int) -> None:
         """Object initialization."""
@@ -19,6 +19,7 @@ class Walls :
         args = lignecommande()
         for i in range (30,10):
             for j in range (30,10):
+                print(f"walls = {i=}{j=}")
                 yield Tile(i+100, j+100, args.wall_color)
 
 
