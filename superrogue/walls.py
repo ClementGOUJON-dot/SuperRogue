@@ -21,3 +21,4 @@ class Walls :
             for j in range (30,10):
                 yield Tile(i+100, j+100, args.wall_color)
 
+
