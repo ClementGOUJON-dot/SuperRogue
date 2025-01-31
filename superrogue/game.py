@@ -35,6 +35,15 @@ class Game :
         self._walls = Walls(nb_lines=self._height,
                                           nb_cols=self._width)
         
+    def _process_events(self) -> None:
+        """Process pygame events."""
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self._state = State.QUIT  # Properly handle quit event
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:  # Press 'Q' to quit
+                    self._state = State.QUIT
+        
     def start(self) -> None:
 
         """Start the game."""
@@ -50,6 +59,9 @@ class Game :
 
             # Wait 1/FPS second
             self._clock.tick(self._fps)
+
+            # Listen for events
+            self._process_events()
 
             # Clear the screen before drawing the next frame
             self._screen.fill(pygame.Color("black"))
