@@ -1,7 +1,7 @@
 import argparse
 
-DEFAULT_WIDTH = 400
-DEFAULT_HEIGHT = 300
+DEFAULT_WIDTH = 40
+DEFAULT_HEIGHT = 30
 DEFAULT_PIXEL = 10
 
 def lignecommande():

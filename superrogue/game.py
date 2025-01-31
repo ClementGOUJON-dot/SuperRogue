@@ -15,7 +15,7 @@ class Game :
         self._heroe_color= heroe_color
         self._heroe= None
 
-    def _init(self) -> None:
+    def _Initialize(self) -> None:
         """Initialize the game."""
 
         # Create a display screen
@@ -53,7 +53,7 @@ class Game :
         pygame.init()
 
         # Initialize game
-        self._init()
+        self._Initialize()
 
         # Start pygame loop
         self._state = State.PLAY
