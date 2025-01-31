@@ -21,7 +21,9 @@ class Game :
         # Create a display screen
         screen_size = (self._width * self._tile_size,
                        self._height * self._tile_size)
-        self._screen = pygame.display.set_mode(screen_size)
+        
+        self._screen = pygame.display.set_mode(screen_size, pygame.FULLSCREEN )
+        pygame.display.flip()
 
         # Create the main board
         self._board = Board(screen=self._screen,
