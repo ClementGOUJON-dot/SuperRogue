@@ -1,0 +1,9 @@
+[tool.poetry]
+name = "SuperRogue"
+version = "0.1.0"
+description = ""
+authors = ["Solène Losantos <solene.losantos@etu.minesparis.psl.eu>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+SuperRogue = "SuperRogue.main:main"
