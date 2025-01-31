@@ -3,12 +3,17 @@ import numpy as np
 
 pygame.init()
 screen = pygame.display.set_mode((500, 500))
-position = np.array([0,0]) # à modifier
+position = np.array([3,3]) # à modifier
+WALL = [[2,4],[3,4],[4,4]]
 
-def next_position(position:np.ndarray,move:np.ndarray):
+def next_position(position:np.ndarray,move:np.ndarray, WALL, DOOR):
      #ajouter murs, portes, donjons, chemins, etc à stocker dans un dico
-     position += move
-     return None
+    next = position + move
+    if next not in WALL :
+        position = next
+    else :
+        print('ERROR : YOU CANNOT WALK THROUGHT A WALL')
+    return None
 
 Flag=True
 while Flag :
