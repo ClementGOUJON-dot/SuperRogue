@@ -70,6 +70,8 @@ class Game :
 
             # Draw
             self._board.draw()
+            pygame.draw.rect(self._screen, pygame.Color("white"), (50, 50, 100, 100))
+            pygame.display.flip()
 
             match self._state:
                 case State.GAMEOVER:
