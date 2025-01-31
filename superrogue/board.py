@@ -1,7 +1,8 @@
 import pygame
 import random as rd
 
-from ..subject import Subject
+from .gold import Gold
+from .subject import Subject
 from .observer import Observer
 from .gameobject import GameObject
 
