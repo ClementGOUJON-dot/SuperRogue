@@ -1,10 +1,11 @@
 import pygame
 import numpy as np
+from .gameobject import GameObject
 
 def norme(positon1,position2):
     return (positon1[0]-position2[0])**2 + (positon1[1]-position2[1])**2
 
-class Monster:
+class Monster(Gameoject):
     def __init__(self,position,damages,lives,name) -> None:
             """Object initialisation"""
             # Vérification que 'position' est un tableau numpy avec 2 dimensions
@@ -19,7 +20,7 @@ class Monster:
 
     def monster_move(self,hero,wall:list):
         if norme(self._position,hero._position) <= 1:
-            hero._lives = 
+            hero._lives = -(self._damages)
         else :
             move = np.array([0,1],[0,-1],[1,0],[-1,0])
             distance =[]
