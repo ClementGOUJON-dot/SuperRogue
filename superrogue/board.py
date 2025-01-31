@@ -17,10 +17,7 @@ class Board (Subject, Observer) : # subject car le Board reçoit aussi des infos
         self._grid = self.generate_grid()  # Grille pour gérer les murs, chemins, etc.
 
     def generate_grid(self):
-        grid = []
-        for row in range (self._nb_cols):
-            grid.append([None]*self._nb_cols)
-        return grid
+        return [[None for _ in range(self._nb_cols)] for _ in range(self._nb_rows)]
 
     def draw(self) -> None:
         self._screen.fill(pygame.Color('black'))
