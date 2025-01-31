@@ -2,7 +2,7 @@ from .lignecommande import lignecommande
 from .game import Game 
 
 def main() -> None :
-    try :
+                
         args = lignecommande()
 
         Game(width = args.width, 
@@ -14,3 +14,4 @@ def main() -> None :
              heroe_color = args.heroe_color)
         
         
+

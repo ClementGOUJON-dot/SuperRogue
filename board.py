@@ -15,7 +15,14 @@ class Board (Subject, Observer) : # subject car le Board reçoit aussi des infos
         self._nb_cols= nb_cols
         self._grid = self.generate_grid()  # Grille pour gérer les murs, chemins, etc.
 
+    def generate_grid(self):
+        grid = []
+        for row in range (self._nb_cols):
+            grid.append([None]*self._nb_cols)
+        return grid
+
     def draw(self) -> None:
+        self._screen.fill(pygame.Color('black'))
         for obj in self._objects:
             for tile in obj.tiles:
                 tile.draw(self._screen, self._tile_size )
@@ -35,4 +42,19 @@ class Board (Subject, Observer) : # subject car le Board reçoit aussi des infos
             if o != obj and not o.background and o in obj : #opérateur in définit par contains dans GameObject
                 return o
         return None
+    
+    def create_gold(self) -> "Gold":
+        gold = None
+        while gold is None or not self.detect_collision(gold):
+            gold = Gold(color=pygame.Color("yellow"), col = rd.randint(0, self._nb_cols - 1), row = rd.randint(0,self._nb_rows - 1))
+        self.add_object(gold)   
+
+    def notify_object_moved(self, obj: GameObject) -> None:
+        collision = self.detect_collision(obj)
+        if collision:
+            obj.notify_collision(collision)
+
+    def notify_object_eaten(self, obj: GameObject) -> None:
+        self.remove_object(obj)
+        self.create_gold()
     
