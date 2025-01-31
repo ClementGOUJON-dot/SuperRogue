@@ -2,8 +2,8 @@ import pygame
 import typing
 from .tile import Tile
 from .lignecommande import lignecommande
-   # Colors
-CB_COLOR_1 = args.wall_color
+
+ 
 
 class Walls :
 
@@ -16,8 +16,9 @@ class Walls :
     @property
     def tiles(self) -> typing.Iterator[Tile]:
         """Tiles generator."""
+        args = lignecommande()
         for i in range (30,10):
             for j in range (30,10):
-                yield Tile(i+100, j+100, CB_COLOR_1)
+                yield Tile(i+100, j+100, args.wall_color)
 
 

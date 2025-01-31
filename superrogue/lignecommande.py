@@ -19,4 +19,7 @@ def lignecommande():
 
     args=parser.parse_args()
 
+    # Run parser on command line arguments
+    return args
+
 

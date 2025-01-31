@@ -6,4 +6,8 @@ authors = ["Solène Losantos <solene.losantos@etu.minesparis.psl.eu>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-SuperRogue = "SuperRogue.main:main"
+SuperRogue = "superrogue.main:main"
+
+[tool.poetry.dependencies]
+python = ">=3.6,<4.0"
+pygame = "^2.6.1"
