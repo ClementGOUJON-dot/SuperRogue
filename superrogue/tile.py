@@ -42,3 +42,10 @@ class Tile:
         """Draw the tile on screen."""
         rect = pygame.Rect(self.x * size, self.y * size, size, size)
         pygame.draw.rect(screen, self.color, rect)
+
+    def get_tiles_rect(self, tile_size):
+        tiles = []
+        for y in range(self.rect.y, self.rect.y + self.rect.height, tile_size):
+            for x in range(self.rect.x, self.rect.x + self.rect.width, tile_size):
+                tiles.append((x, y))  # Ajoute la coordonnée de la case
+        return tiles
