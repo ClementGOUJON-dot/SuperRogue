@@ -1,7 +1,6 @@
 import pygame
 import abc
 
-from .gameobject import GameObject
 
 class Observer(abc.ABC):
     def __init__(self) -> None:
