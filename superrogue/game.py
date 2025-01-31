@@ -1,6 +1,7 @@
 import pygame
 from .walls import Walls
 from .state import State
+from .board import Board
 
 class Game :
 
@@ -22,6 +23,11 @@ class Game :
                        self._height * self._tile_size)
         self._screen = pygame.display.set_mode(screen_size)
 
+        # Create the main board
+        self._board = Board(screen=self._screen,
+                            nb_rows=self._height,
+                            nb_cols=self._width,
+                            tile_size=self._tile_size)
         # Create the clock
         self._clock = pygame.time.Clock()
 
@@ -50,7 +56,7 @@ class Game :
 
             # Draw
             self._board.draw()
-            
+
             match self._state:
                 case State.GAMEOVER:
                     self._drawgameover()
