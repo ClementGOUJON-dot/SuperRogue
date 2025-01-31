@@ -22,8 +22,8 @@ class Game :
         screen_size = (self._width * self._tile_size,
                        self._height * self._tile_size)
         
-        self._screen = pygame.display.set_mode(screen_size, pygame.FULLSCREEN )
-        pygame.display.flip()
+        self._screen = pygame.display.set_mode(screen_size )
+        
 
         # Create the main board
         self._board = Board(screen=self._screen,
@@ -66,7 +66,7 @@ class Game :
             self._process_events()
 
             # Clear the screen before drawing the next frame
-            self._screen.fill(pygame.Color("black"))
+            self._screen.fill(pygame.Color("purple"))
 
             # Draw
             self._board.draw()
